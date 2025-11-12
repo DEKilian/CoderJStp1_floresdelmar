@@ -31,9 +31,30 @@ const flores = [
     }
 ];
 
+const cupones = [
+
+    {
+        id: 1,
+        cupon: "brisa",
+        descuento: 5
+    },
+
+    {
+        id: 1,
+        cupon: "florero",
+        descuento: 10
+    },
+    
+    {
+        id: 1,
+        cupon: "oculto",
+        descuento: 25
+    }
+];
+
 const mediadocena = (num1) => num1 * 6;
 const unadocena = (num1) => num1 * 12;
-const quitar = (num1, num2) => num1 - num2;
+const descuento = (num1, num2) => num1 - ((num1 * num2) / 100); 
  
 let total = 0;
 let subtotal= 0;
@@ -42,7 +63,7 @@ let pedidos = [];
 continuar = true;
 let saludo = alert ("Bienvenido/a a Flores del Mar. Donde decir te amo nunca fue tan facil")
 do {
-    let eleccion = prompt ("Por favor, seleccione la opcion deseada: \n1)Media docena \n2)Una Docena \n3)Quitar un producto \n4)Ver total y salir ")
+    let eleccion = prompt ("Por favor, seleccione la opcion deseada: \n1)Media docena \n2)Una Docena \n3)Agregar Cupon de Descuento \n4)Ver total y salir ")
 
     switch (eleccion) {
 
@@ -128,7 +149,29 @@ do {
         break;
 
         case "3":
-            
+            let cupon = prompt ("Su total hasta el momento es de $"+total+"\n Si posee un cupon promocional de descuento, por favor, ingreselo aqui: ")
+            if (cupon.toLowerCase()=="brisa")
+            {
+                total = descuento (total, cupones[0].descuento)
+                alert ("Se ha aplicado un descuento del "+ cupones[0].descuento+"%.\n Su nuevo total es de $"+total )
+                break;
+            }
+            else if (cupon.toLowerCase()=="florero")
+            {
+                total = descuento (total, cupones[1].descuento)
+                alert ("Se ha aplicado un descuento del "+ cupones[0].descuento+"%.\n Su nuevo total es de $"+total )
+                break;
+            }
+            else if (cupon.toLowerCase()=="oculto")
+            {
+                total = descuento (total, cupones[2].descuento)
+                alert ("Se ha aplicado un descuento del "+ cupones[0].descuento+"%.\n Su nuevo total es de $"+total )
+                break;
+            }
+            else{
+                alert ("No es un cupon valido")
+                break;
+            }
             break;
 
         case "4":
