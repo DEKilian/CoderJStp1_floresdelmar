@@ -61,7 +61,7 @@ let subtotal= 0;
 let pedidos = []; 
 
 continuar = true;
-let saludo = alert ("Bienvenido/a a Flores del Mar. Donde decir te amo nunca fue tan facil")
+let saludo = confirm ("Bienvenido/a a Flores del Mar. Donde decir te amo nunca fue tan facil")
 do {
     let eleccion = prompt ("Por favor, seleccione la opcion deseada: \n1)Media docena \n2)Una Docena \n3)Agregar Cupon de Descuento \n4)Ver total y salir ")
 
@@ -159,13 +159,13 @@ do {
             else if (cupon.toLowerCase()=="florero")
             {
                 total = descuento (total, cupones[1].descuento)
-                alert ("Se ha aplicado un descuento del "+ cupones[0].descuento+"%.\n Su nuevo total es de $"+total )
+                alert ("Se ha aplicado un descuento del "+ cupones[1].descuento+"%.\n Su nuevo total es de $"+total )
                 break;
             }
             else if (cupon.toLowerCase()=="oculto")
             {
                 total = descuento (total, cupones[2].descuento)
-                alert ("Se ha aplicado un descuento del "+ cupones[0].descuento+"%.\n Su nuevo total es de $"+total )
+                alert ("Se ha aplicado un descuento del "+ cupones[2].descuento+"%.\n Su nuevo total es de $"+total )
                 break;
             }
             else{
