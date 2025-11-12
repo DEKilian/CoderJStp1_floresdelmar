@@ -58,7 +58,6 @@ const descuento = (num1, num2) => num1 - ((num1 * num2) / 100);
  
 let total = 0;
 let subtotal= 0;
-let pedidos = []; 
 
 continuar = true;
 let saludo = confirm ("Bienvenido/a a Flores del Mar. Donde decir te amo nunca fue tan facil")
@@ -192,5 +191,3 @@ do {
 
 }
 while (continuar);
-
-
