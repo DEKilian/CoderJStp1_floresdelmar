@@ -149,9 +149,9 @@ do {
         break;
 
         case "3":
-            if (total <= 0)
+            if (total <= 6000)
             {
-                alert ("No posee productos en su carrito a los cuales se pueda aplicar un descuento")
+                alert ("Para poder agregar un descuento en su carrito debera gastar mas de $6000")
                 break;
             }
             else {
