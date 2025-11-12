@@ -149,28 +149,35 @@ do {
         break;
 
         case "3":
-            let cupon = prompt ("Su total hasta el momento es de $"+total+"\n Si posee un cupon promocional de descuento, por favor, ingreselo aqui: ")
+            if (total <= 0)
+            {
+                alert ("No posee productos en su carrito a los cuales se pueda aplicar un descuento")
+                break;
+            }
+            else {
+            let cupon = prompt ("Su total hasta el momento es de $"+total+"\nSi posee un cupon promocional de descuento, por favor, ingreselo aqui: ")
             if (cupon.toLowerCase()=="brisa")
             {
                 total = descuento (total, cupones[0].descuento)
-                alert ("Se ha aplicado un descuento del "+ cupones[0].descuento+"%.\n Su nuevo total es de $"+total )
+                alert ("Se ha aplicado un descuento del "+ cupones[0].descuento+"%.\nSu nuevo total es de $"+total )
                 break;
             }
             else if (cupon.toLowerCase()=="florero")
             {
                 total = descuento (total, cupones[1].descuento)
-                alert ("Se ha aplicado un descuento del "+ cupones[1].descuento+"%.\n Su nuevo total es de $"+total )
+                alert ("Se ha aplicado un descuento del "+ cupones[1].descuento+"%.\nSu nuevo total es de $"+total )
                 break;
             }
             else if (cupon.toLowerCase()=="oculto")
             {
                 total = descuento (total, cupones[2].descuento)
-                alert ("Se ha aplicado un descuento del "+ cupones[2].descuento+"%.\n Su nuevo total es de $"+total )
+                alert ("Se ha aplicado un descuento del "+ cupones[2].descuento+"%.\nSu nuevo total es de $"+total )
                 break;
             }
             else{
                 alert ("No es un cupon valido")
                 break;
+            }
             }
             break;
 
